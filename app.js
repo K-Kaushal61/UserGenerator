@@ -49,4 +49,4 @@ app.get('/delete/:id', async function(req, res){
     res.redirect("/read");
 }); 
 
-app.listen(3000);
+export default app;
