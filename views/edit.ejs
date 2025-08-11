@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body class="w-full h-full bg-zinc-900 text-white p-10 flex flex-col">
+    <div class="flex justify-between items-start w-full">
+      <a href="/read" class="text-blue-500 tracking-tighter cursor-pointer"
+        >Users</a
+      >
+    </div>
+    <div class="flex flex-1 items-center justify-center">
+      <form
+        class="flex flex-col items-center"
+        action="/update/<%= user._id %>"
+        method="post"
+      >
+        <h1 class="bg-red-800 p-2 rounded-lg mb-6 flex justify-center">
+          Create User
+        </h1>
+        <div class="flex gap-4 mb-6">
+          <input
+            type="text"
+            placeholder="name"
+            name="name"
+            class="px-4 py-2 rounded-md bg-zinc-900 text-white border border-zinc-700 focus:outline-none"
+            value="<%= user.name %>"
+          />
+          <input
+            type="email"
+            placeholder="email"
+            name="email"
+            class="px-4 py-2 rounded-md bg-zinc-900 text-white border border-zinc-700 focus:outline-none"
+            value="<%= user.email %>"
+          />
+          <input
+            type="text"
+            placeholder="image URL"
+            name="image"
+            class="px-4 py-2 rounded-md bg-zinc-900 text-white border border-zinc-700 focus:outline-none"
+            value="<%= user.image %>"
+          />
+        </div>
+
+        <button type="submit" class="bg-blue-600 p-2 rounded-lg">
+          Update User
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
