@@ -49,4 +49,4 @@ app.get('/delete/:id', async function(req, res){
     res.redirect("/read");
 }); 
 
-export default app;
+module.exports = app;
